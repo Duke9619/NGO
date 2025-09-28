@@ -1,6 +1,33 @@
 // Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('show');
+            
+            // Change menu icon when open/close
+            if (mainNav.classList.contains('show')) {
+                menuToggle.textContent = '✕';
+            } else {
+                menuToggle.textContent = '☰';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('show');
+                menuToggle.textContent = '☰';
+            });
+        });
+    }
+});
+
 // Contact form handling
 function handleContact(e){
   e.preventDefault();
@@ -34,15 +61,4 @@ document.querySelectorAll('nav a').forEach(anchor => {
       });
     }
   });
-});
-
-// Mobile menu functionality (can be expanded later)
-document.addEventListener('DOMContentLoaded', function() {
-  // Add mobile menu toggle if needed in future
-  console.log('Alfikr Welfare Foundation website loaded successfully');
-});
-// Mobile menu toggle
-document.getElementById('menuToggle').addEventListener('click', function() {
-    const nav = document.getElementById('mainNav');
-    nav.classList.toggle('show');
 });
