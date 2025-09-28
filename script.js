@@ -41,3 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add mobile menu toggle if needed in future
   console.log('Alfikr Welfare Foundation website loaded successfully');
 });
+// Mobile menu toggle
+document.getElementById('menuToggle').addEventListener('click', function() {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('show');
+});
