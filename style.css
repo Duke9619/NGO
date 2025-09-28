@@ -354,3 +354,13 @@ footer{
     display: block;
   }
 }
+/* Add smooth scrolling to html */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve focus states for accessibility */
+a:focus, button:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
